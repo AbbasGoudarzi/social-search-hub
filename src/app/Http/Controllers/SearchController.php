@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NewsPost;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class SearchController extends Controller
@@ -11,7 +11,7 @@ class SearchController extends Controller
     {
         $search = $request->get('q');
 
-        $posts = NewsPost::search($search)->get();
+        $posts = Post::search($search)->get();
 
         return response()->json(['posts' => $posts]);
     }

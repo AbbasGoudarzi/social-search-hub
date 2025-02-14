@@ -21,9 +21,7 @@ class DatabaseSeeder extends Seeder
 //        ]);
 
         $this->call([
-            NewsPostSeeder::class,
-            InstagramPostSeeder::class,
-            TwitterPostSeeder::class,
+            PostSeeder::class,
         ]);
     }
 }

@@ -6,17 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 
-class NewsPost extends Model
+class Post extends Model
 {
     use HasFactory, Searchable;
 
     protected $guarded = [];
 
+    const PLATFORMS = ['news', 'instagram', 'twitter'];
+
+    protected $casts = [
+        'extra_data' => 'array'
+    ];
+
     public function toSearchableArray(): array
     {
         return [
             'published_at' => $this->published_at,
-            'title' => $this->title,
             'content' => $this->content,
             'source' => $this->source,
         ];
