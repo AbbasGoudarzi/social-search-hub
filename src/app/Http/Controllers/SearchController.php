@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SearchRequest;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
 use Illuminate\Database\Eloquent\Builder;
@@ -9,7 +10,7 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
-    public function index(Request $request)
+    public function index(SearchRequest $request)
     {
         $query = $request->get('query');
         $source = $request->get('source');
