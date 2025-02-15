@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "ab1b4d47-bc44-4982-936c-535f3f20ae5c",
+		"name": "Dataak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9157662"
+	},
+	"item": [
+		{
+			"name": "Search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/api/search?query=مشکلات&from_date=2024-03-01 00:00:00",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "مشکلات"
+						},
+						{
+							"key": "from_date",
+							"value": "2024-03-01 00:00:00"
+						},
+						{
+							"key": "source",
+							"value": "tabnak.ir",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store Alarm",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"source\": \"isna.ir\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/api/alarms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"alarms"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
